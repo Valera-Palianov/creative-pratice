@@ -22,6 +22,8 @@
 $default-text-color: #222222;
 
 @import "FRAMEWORK/flex-grid/flex-grid";
+@import "FRAMEWORK/heading/heading";
+@import "FRAMEWORK/caption/caption";
 
 body {
 	margin: 0;

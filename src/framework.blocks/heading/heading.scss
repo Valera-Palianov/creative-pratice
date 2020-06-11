@@ -1,0 +1,10 @@
+.heading {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 20px;
+
+	&_sub {
+		font-weight: 400;
+	}
+}

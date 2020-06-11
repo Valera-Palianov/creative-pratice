@@ -1,0 +1,40 @@
+.caption {
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: -0.02em;
+
+	&_l {
+		font-size: 18px;
+		line-height: 24px;
+	}
+
+	&_s {
+		font-size: 14px;
+		line-height: 16px;
+	}
+
+	&_light {
+		font-weight: 300;
+	}
+
+	&_medium {
+		font-weight: 500;
+	}
+}
+
+@media (max-width: 1366px) {
+	.caption {
+		font-size: 14px;
+		line-height: 18px;
+
+		&_l {
+			font-size: 16px;
+			line-height: 20px;
+		}
+
+		&_s {
+			font-size: 12px;
+			line-height: 14px;
+		}
+	}
+}
