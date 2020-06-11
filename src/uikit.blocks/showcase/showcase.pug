@@ -22,6 +22,12 @@ mixin showcase(options = {})
 
 				vAlign = true
 		        break;
+		    case 'button':
+		    	var title = options.data.title
+				var columns = 2
+
+				vAlign = true
+		        break;
 		}
 
 		let columnsClass = `flex-grid_columns_${columns}`
@@ -50,5 +56,9 @@ mixin showcase(options = {})
 						.showcase__color(class=className)
 					.showcase__item.flex-grid__item_width_2.showcase__item_description=code
 					.showcase__item.flex-grid__item_width_3.showcase__item_description=title
+				when 'button'
+					.showcase__item
+						block
+					.showcase__item.showcase__item_description=title
 				default
 					div Incorrect type

@@ -6,19 +6,17 @@ block title
 	| UI Kit
 
 block page
-	.template
+	.template.large-screen-imitation
 		.template__item.section
 			include includes/fonts
 		.template__item.section
 			include includes/colors
 		.template__item.section
-			h1 Кнопка
-			.flex-grid
-				+showcase({type: 'button'})
+			include includes/buttons
 		.template__item.section
 			h1 Иконки (Сервисные)
-			.flex-grid
-				+showcase({type: 'icon'})
+			include ~ROOT/img/external-link.svg
+
 		.template__item.section
 			h1 Ссылки
 			.flex-grid
