@@ -25,17 +25,24 @@
 @import "FRAMEWORK/heading/heading";
 @import "FRAMEWORK/caption/caption";
 
+.default-text-color {color: $default-text-color;}
 .error-color {color: $error;}
 .success-color {color: $success;}
 .hover-color {color: $hover;}
 .picked-color {color: $picked;}
 .accent-color {color: $accent;}
 
-.error-bg {background: $error;}
+.default-text-bg {background: $default-text-color;}
+.grey-darkest-bg {background: $grey-darkest;}
+.grey-darker-bg {background: $grey-darker;}
+.grey-light-bg {background: $grey-light;}
 .success-bg {background: $success;}
-.hover-bg {background: $hover;}
-.picked-bg {background: $picked;}
 .accent-bg {background: $accent;}
+.picked-bg {background: $picked;}
+.hover-bg {background: $hover;}
+.error-bg {background: $error;}
+.white-bg {background: $white;}
+.grey-bg {background: $grey;}
 
 body {
 	margin: 0;
