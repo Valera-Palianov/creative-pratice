@@ -1,0 +1,30 @@
+mixin showcase(options = {})
+	-
+		let classes = ''
+		let classBase = 'showcase'
+		let type = options.type
+
+		classes += classBase+'_'+type
+
+
+	.showcase(class=classes)
+		.showcase__container.flex-grid.flex-grid_columns_2
+			case type
+				when 'font'
+					-
+						let title = options.data.title
+						let tag = options.data.tag ? options.data.tag : false
+						let additionalClass = options.data.class ? options.data.class : ''					
+
+					.showcase__item
+						case tag
+							when 'h1'
+								h1(class=additionalClass)=title
+							when 'h2'
+								h2(class=additionalClass)=title
+							default
+								div(class=additionalClass)=title
+					.showcase__item.showcase__item_description
+						block
+				default
+					| Incorrect type
