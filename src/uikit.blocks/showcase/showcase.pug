@@ -22,6 +22,8 @@ mixin showcase(options = {})
 								h1(class=additionalClass)=title
 							when 'h2'
 								h2(class=additionalClass)=title
+							when 'strong'
+								strong(class=additionalClass)=title
 							default
 								div(class=additionalClass)=title
 					.showcase__item.showcase__item_description
