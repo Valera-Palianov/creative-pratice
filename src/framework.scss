@@ -19,11 +19,23 @@
     font-weight: 600;
 }
 
-$default-text-color: #222222;
+@import "variables";
 
 @import "FRAMEWORK/flex-grid/flex-grid";
 @import "FRAMEWORK/heading/heading";
 @import "FRAMEWORK/caption/caption";
+
+.error-color {color: $error;}
+.success-color {color: $success;}
+.hover-color {color: $hover;}
+.picked-color {color: $picked;}
+.accent-color {color: $accent;}
+
+.error-bg {background: $error;}
+.success-bg {background: $success;}
+.hover-bg {background: $hover;}
+.picked-bg {background: $picked;}
+.accent-bg {background: $accent;}
 
 body {
 	margin: 0;
