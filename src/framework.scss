@@ -19,17 +19,17 @@
     font-weight: 600;
 }
 
-@import "variables";
+$default-text-color: #222222;
 
 @import "FRAMEWORK/flex-grid/flex-grid";
 
 body {
-	@include body-default-text-size
-
 	margin: 0;
 	padding: 0;
 	color: $default-text-color;
 	font-family: 'Montserrat';
+	font-size: 18px;
+	line-height:26px;
 }
 
 b, strong {
@@ -41,20 +41,21 @@ p {
 }
 
 button {
-	@include button-default-text-size
+	font-size: 18px;
+	line-height: 20px;
 }
 
 h1 {
-	@include h1-default-text-size
-
+	font-size: 36px;
+	line-height: 44px;
 	letter-spacing: -0.02em;
 	font-weight: 600;
 	margin: 0 0 36px 0;
 }
 
 h2 {
-	@include h2-default-text-size
-
+	font-size: 32px;
+	line-height: 40px;
 	letter-spacing: -0.02em;
 	font-weight: 500;
 	margin: 0 0 24px 0;
@@ -62,18 +63,22 @@ h2 {
 
 @media (max-width: 1366px) {
 	body {
-		@include body-1366-text-size
+		font-size: 16px;
+		line-height:24px;
 	}
 
 	button {
-		@include button-1366-text-size
+		font-size: 14px;
+		line-height: 14px;
 	}
 
 	h1 {
-		@include h1-1366-text-size
+		font-size: 32px;
+		line-height: 40px;
 	}
 
 	h2 {
-		@include h2-1366-text-size
+		font-size: 24px;
+		line-height: 32px;
 	}
 }
