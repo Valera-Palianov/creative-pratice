@@ -54,7 +54,7 @@ p {
 	margin: 8px 0;
 }
 
-button {
+button, .button {
 	font-size: 18px;
 	line-height: 20px;
 }
@@ -75,13 +75,19 @@ h2 {
 	margin: 0 0 24px 0;
 }
 
+@media (min-width: 1366px) {
+	.l-dn {
+		display:none;	
+	}
+}
+
 @media (max-width: 1366px) {
 	body {
 		font-size: 16px;
 		line-height:24px;
 	}
 
-	button {
+	button, .button {
 		font-size: 14px;
 		line-height: 14px;
 	}
@@ -94,5 +100,9 @@ h2 {
 	h2 {
 		font-size: 24px;
 		line-height: 32px;
+	}
+
+	.m-dn {
+		display:none;	
 	}
 }

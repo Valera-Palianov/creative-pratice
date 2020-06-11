@@ -3,28 +3,52 @@ mixin showcase(options = {})
 		let classes = ''
 		let classBase = 'showcase'
 		let type = options.type
+		let vAlign = false
 
 		classes += classBase+'_'+type
 
+		switch(type){
+		    case 'font':
+		    	var title = options.data.title
+				var tag = options.data.tag ? options.data.tag : false
+				var className = options.data.className ? options.data.className : ''
+				var columns = 2
+		        break;
+		    case 'color':
+		    	var title = options.data.title
+				var code = options.data.code
+				var className = options.data.className
+				var columns = 3
+
+				vAlign = true
+		        break;
+		}
+
+		let columnsClass = `flex-grid_columns_${columns}`
+		let vAlignClass = vAlign ? 'flex-grid_v-align_center' : ''
 
 	.showcase(class=classes)
-		.showcase__container.flex-grid.flex-grid_columns_2
+		.showcase__container.flex-grid(class=`${columnsClass} ${vAlignClass}`)
 			case type
 				when 'font'
-					-
-						let title = options.data.title
-						let tag = options.data.tag ? options.data.tag : false
-						let additionalClass = options.data.class ? options.data.class : ''					
-
 					.showcase__item
 						case tag
 							when 'h1'
-								h1(class=additionalClass)=title
+								h1(class=className)=title
 							when 'h2'
-								h2(class=additionalClass)=title
+								h2(class=className)=title
+							when 'strong'
+								strong(class=className)=title
 							default
-								div(class=additionalClass)=title
+								div(class=className)=title
 					.showcase__item.showcase__item_description
 						block
+
+					- break
+				when 'color'
+					.showcase__item.flex-grid__item_width_1
+						.showcase__color(class=className)
+					.showcase__item.flex-grid__item_width_2.showcase__item_description=code
+					.showcase__item.flex-grid__item_width_3.showcase__item_description=title
 				default
-					| Incorrect type
+					div Incorrect type
