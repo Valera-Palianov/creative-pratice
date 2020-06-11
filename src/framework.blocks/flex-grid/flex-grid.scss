@@ -20,6 +20,15 @@
 			align-items: center;
 		}
 	}
+
+	&_h-align {
+		&_center {
+			& > *:not(.flex-grid__item_h-align_ignore) {
+				display:flex;
+				justify-content:center;
+			}
+		}
+	}
 	
 	&_columns {
 

@@ -1,0 +1,52 @@
+mixin icon(options = {})
+	-
+		let icon = options.icon
+		let link = options.href ? options.href : false
+		let className = options.className ? ' '+options.className : ''
+		let isHover = options.isHover ? true : false
+		let isActive = options.isActive ? true : false
+
+		let classes = 'icon icon_'+icon+className+(isHover ? " icon_hover" : "")+(isActive ? " icon_active" : "")
+
+	a(class=classes href=link)
+		case icon
+			when 'search'
+				include ~ROOT/img/search.svg
+			when 'search-small'
+				include ~ROOT/img/search-small.svg
+			when 'bookmark'
+				include ~ROOT/img/bookmark.svg
+			when 'notification'
+				include ~ROOT/img/notification.svg
+			when 'hide-notification'
+				include ~ROOT/img/hide-notification.svg
+			when 'download'
+				include ~ROOT/img/download.svg
+			when 'external-link'
+				include ~ROOT/img/external-link.svg
+			when 'eye-opened'
+				include ~ROOT/img/eye-opened.svg
+			when 'eye-closed'
+				include ~ROOT/img/eye-closed.svg
+			when 'qa'
+				include ~ROOT/img/qa.svg
+			when 'doc-icon'
+				include ~ROOT/img/doc-icon.svg
+			when 'pdf-icon'
+				include ~ROOT/img/pdf-icon.svg
+			when 'settings'
+				include ~ROOT/img/settings.svg
+			when 'more-horizontal'
+				include ~ROOT/img/more-horizontal.svg
+			when 'delete'
+				include ~ROOT/img/delete.svg
+			when 'history'
+				include ~ROOT/img/history.svg
+			when 'seen'
+				include ~ROOT/img/seen.svg
+			when 'arrow-right'
+				include ~ROOT/img/arrow-right.svg
+			when 'arrow-down'
+				include ~ROOT/img/arrow-down.svg
+			default
+				div icon not found

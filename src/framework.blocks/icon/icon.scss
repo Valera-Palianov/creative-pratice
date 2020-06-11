@@ -1,0 +1,28 @@
+.icon {
+	width: 20px;
+	height: 20px;
+	user-select: none;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+
+	
+	&__target {
+		transition: 0.2s;
+		fill-opacity: 0;
+	}
+
+	&:hover, &_hover {
+		.icon__target {
+			fill-opacity: 100;
+			fill: $picked;
+		}
+	}
+
+	&:active, &_active {
+		.icon__target {
+			fill-opacity: 100;
+			fill: $accent;
+		}
+	}
+}

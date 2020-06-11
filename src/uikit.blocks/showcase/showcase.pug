@@ -1,9 +1,12 @@
+include ~FRAMEWORK/icon/icon
+
 mixin showcase(options = {})
 	-
 		let classes = ''
 		let classBase = 'showcase'
 		let type = options.type
 		let vAlign = false
+		let hAlign = false
 
 		classes += classBase+'_'+type
 
@@ -28,13 +31,22 @@ mixin showcase(options = {})
 
 				vAlign = true
 		        break;
+		    case 'icon':
+		    	var title = options.data.title
+		    	var brake = options.data.brake ? options.data.brake : 0
+				var columns = 6
+
+				vAlign = true
+				hAlign = true
+		        break;
 		}
 
 		let columnsClass = `flex-grid_columns_${columns}`
 		let vAlignClass = vAlign ? 'flex-grid_v-align_center' : ''
+		let hAlignClass = hAlign ? 'flex-grid_h-align_center' : ''
 
 	.showcase(class=classes)
-		.showcase__container.flex-grid(class=`${columnsClass} ${vAlignClass}`)
+		.showcase__container.flex-grid(class=`${columnsClass} ${vAlignClass} ${hAlignClass}`)
 			case type
 				when 'font'
 					.showcase__item
@@ -60,5 +72,24 @@ mixin showcase(options = {})
 					.showcase__item
 						block
 					.showcase__item.showcase__item_description=title
+				when 'icon'
+					.showcase__item
+						+icon({icon: title})
+					case brake
+						when 2
+							.showcase__item.showcase__item_description нет
+							.showcase__item.showcase__item_description нет	
+						when 1
+							.showcase__item
+								+icon({icon: title, isHover: true})
+							.showcase__item.showcase__item_description нет
+						default
+							.showcase__item
+								+icon({icon: title, isHover: true})
+							.showcase__item
+								+icon({icon: title, isActive: true})
+
+					.showcase__item
+					.showcase__item.flex-grid__item_width_2.showcase__item_description.flex-grid__item_h-align_ignore=title
 				default
 					div Incorrect type
