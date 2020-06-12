@@ -5,6 +5,7 @@ mixin icon(options = {})
 		let className = options.className ? ' '+options.className : ''
 		let isHover = options.isHover ? true : false
 		let isActive = options.isActive ? true : false
+		let indicator = options.indicator ? true : false
 
 		let advIcons = [
 			'clothes',
@@ -20,7 +21,7 @@ mixin icon(options = {})
 		if(advIcons.indexOf(icon) != -1) {
 			className += ' icon_adv'
 		}
-		let classes = `${classBase} ${classBase}_`+icon+className+(isHover ? ` ${classBase}_hover` : "")+(isActive ? ` ${classBase}_active` : "")
+		let classes = `${classBase} ${classBase}_`+icon+className+(isHover ? ` ${classBase}_hover` : "")+(isActive ? ` ${classBase}_active` : "")+(indicator ? ` ${classBase}_indicator` : "")
 
 	a(class=classes href=link)
 		case icon
