@@ -6,7 +6,21 @@ mixin icon(options = {})
 		let isHover = options.isHover ? true : false
 		let isActive = options.isActive ? true : false
 
-		let classes = 'icon icon_'+icon+className+(isHover ? " icon_hover" : "")+(isActive ? " icon_active" : "")
+		let advIcons = [
+			'clothes',
+			'lux',
+			'boots',
+			'calendar',
+			'commercial-building',
+			'profile'
+		]
+
+		let classBase = 'icon'
+
+		if(advIcons.indexOf(icon) != -1) {
+			classBase = 'icon-adv'
+		}
+		let classes = `${classBase} ${classBase}_`+icon+className+(isHover ? ` ${classBase}_hover` : "")+(isActive ? ` ${classBase}_active` : "")
 
 	a(class=classes href=link)
 		case icon
@@ -48,5 +62,17 @@ mixin icon(options = {})
 				include ~ROOT/img/arrow-right.svg
 			when 'arrow-down'
 				include ~ROOT/img/arrow-down.svg
+			when 'clothes'
+				include ~ROOT/img/clothes.svg
+			when 'profile'
+				include ~ROOT/img/profile-icon.svg
+			when 'lux'
+				include ~ROOT/img/lux.svg
+			when 'boots'
+				include ~ROOT/img/boots.svg
+			when 'calendar'
+				include ~ROOT/img/calendar.svg
+			when 'commercial-building'
+				include ~ROOT/img/commercial-building.svg
 			default
 				div icon not found

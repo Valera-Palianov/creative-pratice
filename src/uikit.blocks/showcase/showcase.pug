@@ -39,6 +39,13 @@ mixin showcase(options = {})
 				vAlign = true
 				hAlign = true
 		        break;
+		    case 'icon-adv':
+		    	var title = options.data.title
+		    	var icon = options.data.icon
+		    	var columns = 6
+				vAlign = true
+				hAlign = true
+		        break;
 		}
 
 		let columnsClass = `flex-grid_columns_${columns}`
@@ -62,16 +69,17 @@ mixin showcase(options = {})
 					.showcase__item.showcase__item_description
 						block
 
-					- break
 				when 'color'
 					.showcase__item.flex-grid__item_width_1
 						.showcase__color(class=className)
 					.showcase__item.flex-grid__item_width_2.showcase__item_description=code
 					.showcase__item.flex-grid__item_width_3.showcase__item_description=title
+
 				when 'button'
 					.showcase__item
 						block
 					.showcase__item.showcase__item_description=title
+
 				when 'icon'
 					.showcase__item
 						+icon({icon: title})
@@ -91,5 +99,20 @@ mixin showcase(options = {})
 
 					.showcase__item
 					.showcase__item.flex-grid__item_width_2.showcase__item_description.flex-grid__item_h-align_ignore=title
+
+				when 'icon-adv'
+					.showcase__item
+						.showcase__icon-holder.grey-light-bg
+							+icon({icon: icon, isHover: true})
+					.showcase__item
+						.showcase__icon-holder.grey-light-bg
+							+icon({icon: icon, isActive: true})
+					.showcase__item
+						.showcase__icon-holder.grey-light-bg
+							+icon({icon: icon})
+
+					.showcase__item
+					.showcase__item.flex-grid__item_width_2.showcase__item_description.flex-grid__item_h-align_ignore=title
+					
 				default
 					div Incorrect type

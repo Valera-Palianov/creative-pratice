@@ -6,8 +6,13 @@
 			letter-spacing: -0.02em;
 		}
 	}
-	&__color {
+	&__color, &__icon-holder {
 		width: 72px;
 		height: 72px;
 	}
+	 &__icon-holder {
+	 	display:flex;
+	 	align-items: center;
+	 	justify-content:center;
+	 }
 }
