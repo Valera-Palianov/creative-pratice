@@ -103,6 +103,18 @@ mixin showcase(options = {})
 					+__item()
 					+__item({desc: true, flex: {width: 2, hAlignIgnore: true}})=iconAdv.title
 
+			when 'link'
+				-
+					const link = {
+						title: options.data.title,
+						className: options.data.className ? options.data.className : ''
+					}
+				+flex-grid({columns: 3, vAlign: 'center', className: 'showcase__container'})
+					+__item()
+						a.h2-text-size(href="#", class=link.className) Ссылка
+					+__item()
+						a(href="#", class=link.className) Ссылка
+					+__item({desc: true})=link.title
 			default
 				+flex-grid()
 					+__item({desc: true}) Incorrect type

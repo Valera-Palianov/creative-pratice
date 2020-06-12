@@ -17,3 +17,6 @@ block page
 			include includes/fonts
 		.template__item.section
 			h1 Ссылки
+			.flex-grid
+				+showcase({type: "link", data: {title: 'Нормальное'}})
+				+showcase({type: "link", data: {title: 'Наведение', className: 'hover'}})
