@@ -1,0 +1,8 @@
+.toolbox {
+	display:flex;
+	flex-direction: revert;
+
+	&__item {
+		margin-left: 20px;
+	}
+}

@@ -1,7 +1,32 @@
 extends ../base/base
+include ~FRAMEWORK/icon/icon
 
 block title
 	| Index
 
 block page
 	.template
+		aside.template__sidebar.sidebar
+			.sidebar__logo
+				.logo
+					include ~ROOT/img/logo.svg
+			.sidebar__content
+				nav.navigation
+					+icon({icon: 'clothes', className: 'navigation__item', href: '#'})
+					+icon({icon: 'boots', className: 'navigation__item', href: '#', isActive: true, indicator: true})
+					+icon({icon: 'commercial-building', className: 'navigation__item', href: '#'})
+				.user
+					+icon({icon: 'profile', href: '#', className: 'user__icon'})
+					+icon({icon: 'qa', href: '#', className: 'user__help'})
+		.template__page
+			header.template__header.header
+				h1.header__title.heading
+					a(href='#') Обувной ритейл
+					span  /  
+					a.heading.heading_sub(href='#') Мужская обувь
+				.header__toolbox.toolbox
+					+icon({icon: 'search', href: '#', className: 'toolbox__item'})
+					+icon({icon: 'bookmark', href: '#', className: 'toolbox__item'})
+					+icon({icon: 'notification', href: '#', className: 'toolbox__item', indicator: true})
+			main.template__main.main Main
+			footer.template__footer.footer

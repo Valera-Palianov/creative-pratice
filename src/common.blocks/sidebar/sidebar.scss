@@ -1,0 +1,20 @@
+.sidebar {
+	background: $grey-light;
+	border-right: 1px solid $grey;
+	display:grid;
+	grid-template-rows: 60px 1fr;
+	box-sizing:border-box;
+
+	&__logo {
+		padding: 6px 16px 0 16px;
+	}
+
+	&__content {
+		padding: 16px;
+		padding-bottom: 32px;
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items:center;
+	}
+}

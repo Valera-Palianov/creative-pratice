@@ -1,1 +1,10 @@
-@import "COMMON/template/template"
+@import "ROOT/variables";
+@import "COMMON/template/template";
+@import "COMMON/sidebar/sidebar";
+@import "COMMON/header/header";
+@import "COMMON/main/main";
+@import "COMMON/footer/footer";
+@import "COMMON/logo/logo";
+@import "COMMON/navigation/navigation";
+@import "COMMON/user/user";
+@import "COMMON/toolbox/toolbox";
