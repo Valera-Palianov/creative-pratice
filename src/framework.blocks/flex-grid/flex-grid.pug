@@ -1,0 +1,20 @@
+mixin flex-grid(options={})
+	-
+		let classBase = 'flex-grid'
+		let classes = options.className ? options.className : ''
+		classes += options.columns ? ` ${classBase}_columns_${options.columns}` : ''
+		classes += options.vAlign ? ` ${classBase}_v-align_${options.vAlign}` : ''
+		classes += options.hAlign ? ` ${classBase}_h-align_${options.hAlign}` : ''
+
+	.flex-grid(class=classes)
+		block
+
+mixin flex-grid__item(options={})
+	-
+		let classBase = 'flex-grid__item'
+		let classes = options.className ? options.className : ''
+		classes += options.width ? ` ${classBase}_width_${options.width}` : ''
+		classes += options.hAlignIgnore ? ` ${classBase}_h-align_ignore` : ''
+
+	.flex-grid__item(class=classes)
+		block

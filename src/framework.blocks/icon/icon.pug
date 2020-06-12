@@ -18,7 +18,7 @@ mixin icon(options = {})
 		let classBase = 'icon'
 
 		if(advIcons.indexOf(icon) != -1) {
-			classBase = 'icon-adv'
+			className += ' icon_adv'
 		}
 		let classes = `${classBase} ${classBase}_`+icon+className+(isHover ? ` ${classBase}_hover` : "")+(isActive ? ` ${classBase}_active` : "")
 

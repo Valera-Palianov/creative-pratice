@@ -1,118 +1,129 @@
 include ~FRAMEWORK/icon/icon
+include ~FRAMEWORK/button/button
+include ~FRAMEWORK/flex-grid/flex-grid
 
 mixin showcase(options = {})
 	-
-		let classes = ''
-		let classBase = 'showcase'
 		let type = options.type
-		let vAlign = false
-		let hAlign = false
 
-		classes += classBase+'_'+type
+	.showcase(class=`showcase_${type}`)
+		case type
 
-		switch(type){
-		    case 'font':
-		    	var title = options.data.title
-				var tag = options.data.tag ? options.data.tag : false
-				var className = options.data.className ? options.data.className : ''
-				var columns = 2
-		        break;
-		    case 'color':
-		    	var title = options.data.title
-				var code = options.data.code
-				var className = options.data.className
-				var columns = 3
+			when 'font'
+				-
+					const font = {
+						title: options.data.title,
+						className: options.data.className ? options.data.className : '',
+						props: options.data.props ? options.data.props : []
+					}
 
-				vAlign = true
-		        break;
-		    case 'button':
-		    	var title = options.data.title
-				var columns = 2
+				+flex-grid({columns: 2, className: 'showcase__container'})
+					
+					+__item()
+						div(class=font.className)=font.title
+								
+					+__item({desc: true})
+						each prop in font.props
+							div= prop
 
-				vAlign = true
-		        break;
-		    case 'icon':
-		    	var title = options.data.title
-		    	var brake = options.data.brake ? options.data.brake : 0
-				var columns = 6
+			when 'color'
 
-				vAlign = true
-				hAlign = true
-		        break;
-		    case 'icon-adv':
-		    	var title = options.data.title
-		    	var icon = options.data.icon
-		    	var columns = 6
-				vAlign = true
-				hAlign = true
-		        break;
+				-	
+					const color = {
+						title: options.data.title,
+						code: options.data.code,
+						className: options.data.className
+					}
+
+				+flex-grid({columns: 3, className: 'showcase__container'})
+
+					+__item( {flex: {width: 1} } )
+						.showcase__color(class=color.className)
+					+__item({desc: true, flex: {width: 2}})=color.code
+					+__item({desc: true, flex: {width: 3}})=color.title
+
+			when 'button'
+
+				-
+					const button = {
+						title: options.data.title,
+						button: options.data.button
+					}
+
+				+flex-grid({columns: 2, vAlign: 'center', className: 'showcase__container'})
+					+__item()
+						+button(button.button)
+					+__item({desc: true})=button.title
+
+			when 'icon'
+
+				-
+					const icon = {
+						icon: options.data.icon,
+						count: options.data.count ? options.data.count : 3
+					}
+
+				+flex-grid({columns: 6, vAlign: 'center', hAlign: 'center', className: 'showcase__container'})
+					+__item()
+						+icon({icon: icon.icon})
+
+					if icon.count > 1
+						+__item()
+							+icon({icon: icon.icon, isHover: true})
+					else 
+						+__item({desc: true}) нет
+
+					if icon.count > 2
+						+__item()
+							+icon({icon: icon.icon, isActive: true})
+					else
+						+__item({desc: true}) нет
+								
+					+__item()
+					+__item({desc: true, flex: {width: 2, hAlignIgnore: true}})=icon.icon
+
+			when 'icon-adv'
+				-
+					const iconAdv = {
+						title: options.data.title,
+						icon: options.data.icon
+					}
+
+				+flex-grid({columns: 6, vAlign: 'center', hAlign: 'center', className: 'showcase__container'})
+					+__item()
+						.showcase__icon-holder.grey-light-bg
+							+icon({icon: iconAdv.icon, isHover: true})
+					+__item()
+						.showcase__icon-holder.grey-light-bg
+							+icon({icon: iconAdv.icon, isActive: true})
+					+__item()
+						.showcase__icon-holder.grey-light-bg
+							+icon({icon: iconAdv.icon})
+
+					+__item()
+					+__item({desc: true, flex: {width: 2, hAlignIgnore: true}})=iconAdv.title
+
+			default
+				+flex-grid()
+					+__item({desc: true}) Incorrect type
+
+
+mixin __item(options={})
+	-
+		baseClass = 'showcase__item'
+		let classes = baseClass+(options.className ? ' '+options.className : '')
+		classes += options.desc ? ` ${baseClass}_description` : ''
+
+		let flex = false
+
+		if(options.flex) {
+			flex = true
+			options.flex.className = classes
 		}
 
-		let columnsClass = `flex-grid_columns_${columns}`
-		let vAlignClass = vAlign ? 'flex-grid_v-align_center' : ''
-		let hAlignClass = hAlign ? 'flex-grid_h-align_center' : ''
-
-	.showcase(class=classes)
-		.showcase__container.flex-grid(class=`${columnsClass} ${vAlignClass} ${hAlignClass}`)
-			case type
-				when 'font'
-					.showcase__item
-						case tag
-							when 'h1'
-								h1(class=className)=title
-							when 'h2'
-								h2(class=className)=title
-							when 'strong'
-								strong(class=className)=title
-							default
-								div(class=className)=title
-					.showcase__item.showcase__item_description
-						block
-
-				when 'color'
-					.showcase__item.flex-grid__item_width_1
-						.showcase__color(class=className)
-					.showcase__item.flex-grid__item_width_2.showcase__item_description=code
-					.showcase__item.flex-grid__item_width_3.showcase__item_description=title
-
-				when 'button'
-					.showcase__item
-						block
-					.showcase__item.showcase__item_description=title
-
-				when 'icon'
-					.showcase__item
-						+icon({icon: title})
-					case brake
-						when 2
-							.showcase__item.showcase__item_description нет
-							.showcase__item.showcase__item_description нет	
-						when 1
-							.showcase__item
-								+icon({icon: title, isHover: true})
-							.showcase__item.showcase__item_description нет
-						default
-							.showcase__item
-								+icon({icon: title, isHover: true})
-							.showcase__item
-								+icon({icon: title, isActive: true})
-
-					.showcase__item
-					.showcase__item.flex-grid__item_width_2.showcase__item_description.flex-grid__item_h-align_ignore=title
-
-				when 'icon-adv'
-					.showcase__item
-						.showcase__icon-holder.grey-light-bg
-							+icon({icon: icon, isHover: true})
-					.showcase__item
-						.showcase__icon-holder.grey-light-bg
-							+icon({icon: icon, isActive: true})
-					.showcase__item
-						.showcase__icon-holder.grey-light-bg
-							+icon({icon: icon})
-
-					.showcase__item
-					.showcase__item.flex-grid__item_width_2.showcase__item_description.flex-grid__item_h-align_ignore=title
-					
-				default
-					div Incorrect type
+	if flex
+		+flex-grid__item(options.flex)
+			block
+	else
+		div(class=classes)
+			block

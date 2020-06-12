@@ -1,81 +1,24 @@
 h1 Кнопка
+
 h2.m-dn 1920
 h2.l-dn 1366
+
 .flex-grid
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'no-icon/accent/normal',
-		}
-	})
-		button.button Кнопка
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'no-icon/accent/on-hover',
-		}
-	})
-		button.button.button_hover Кнопка
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'no-icon/accent/disable',
-		}
-	})
-		button.button(disabled) Кнопка
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'no-icon/accent-alt/normal',
-		}
-	})
-		button.button.button_theme_alt Кнопка
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'no-icon/accent-alt/on-hover',
-		}
-	})
-		button.button.button_theme_alt.button_hover Кнопка
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'no-icon/accent-alt/disable',
-		}
-	})
-		button.button.button_theme_alt(disabled) Кнопка
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'no-icon/secondary/normal',
-		}
-	})
-		button.button.button_theme_secondary Кнопка
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'no-icon/secondary/on-hover',
-		}
-	})
-		button.button.button_theme_secondary.button_hover Кнопка
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'no-icon/secondary/disable',
-		}
-	})
-		button.button.button_theme_secondary(disabled) Кнопка
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'no-icon/ghost/normal',
-		}
-	})
-		button.button.button_theme_ghost Кнопка
-	+showcase({
-		type: 'button',
-		data: {
-			title: 'with-icon/accent/normal',
-		}
-	})
-		button.button.button_icon.button_icon_close Кнопка
+	-
+		let buttons = [
+			{title: 'no-icon/accent/normal', button: {title: 'Кнопка'}},
+			{title: 'no-icon/accent/on-hover', button: {title: 'Кнопка', isHover: true}},
+			{title: 'no-icon/accent/disable', button: {title: 'Кнопка', isDisabled: true}},
+			{title: 'no-icon/accent-alt/normal', button: {title: 'Кнопка', theme: 'alt'}},
+			{title: 'no-icon/accent-alt/on-hover', button: {title: 'Кнопка', theme: 'alt', isHover: true}},
+			{title: 'no-icon/accent-alt/disable', button: {title: 'Кнопка', theme: 'alt', isDisabled: true}},
+			{title: 'no-icon/secondary/normal', button: {title: 'Кнопка', theme: 'secondary'}},
+			{title: 'no-icon/secondary/on-hover', button: {title: 'Кнопка', theme: 'secondary', isHover: true}},
+			{title: 'no-icon/secondary/disable', button: {title: 'Кнопка', theme: 'secondary', isDisabled: true}},
+			{title: 'no-icon/ghost/normal', button: {title: 'Кнопка', theme: 'ghost'}},
+			{title: 'with-icon/accent/normal', button: {title: 'Кнопка', icon: 'close'}},
+
+		]
+
+	each button in buttons
+		+showcase({type: "button", data: button})

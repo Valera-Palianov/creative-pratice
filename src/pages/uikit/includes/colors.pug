@@ -1,90 +1,19 @@
 h1 Цвета
+
 .flex-grid
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'body',
-			code: '#222222',
-			className: 'default-text-bg'
-		}
-	})
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'dark-grey',
-			code: '#666666',
-			className: 'grey-darkest-bg'
-		}
-	})
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'dark-grey-2',
-			code: '#C4C4C4',
-			className: 'grey-darker-bg'
-		}
-	})
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'grey',
-			code: '#DDDDDD',
-			className: 'grey-bg'
-		}
-	})
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'light-grey',
-			code: '#F2F2F2',
-			className: 'grey-light-bg'
-		}
-	})
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'white',
-			code: '#FFFFFF',
-			className: 'white-bg'
-		}
-	})
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'accent/active',
-			code: '#FFCC66',
-			className: 'accent-bg'
-		}
-	})
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'picked',
-			code: '#FFDD99',
-			className: 'picked-bg'
-		}
-	})
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'on-hover',
-			code: '#FFEECC',
-			className: 'hover-bg'
-		}
-	})
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'success',
-			code: '#6CD858',
-			className: 'success-bg'
-		}
-	})
-	+showcase({
-		type: 'color',
-		data: {
-			title: 'error',
-			code: '#FF533D',
-			className: 'error-bg'
-		}
-	})
+	-
+		let colors = [
+			{title: 'body', code: '#222222', className: 'default-text-bg'},
+			{title: 'dark-grey', code: '#666666', className: 'grey-darkest-bg'},
+			{title: 'dark-grey-2', code: '#C4C4C4', className: 'grey-darker-bg'},
+			{title: 'grey', code: '#DDDDDD', className: 'grey-bg'},
+			{title: 'light-grey', code: '#F2F2F2', className: 'grey-light-bg'},
+			{title: 'white', code: '#FFFFFF', className: 'white-bg'},
+			{title: 'accent/active', code: '#FFCC66', className: 'accent-bg'},
+			{title: 'picked', code: '#FFDD99', className: 'picked-bg'},
+			{title: 'on-hover', code: '#FFEECC', className: 'hover-bg'},
+			{title: 'success', code: '#6CD858', className: 'success-bg'},
+			{title: 'error', code: '#FF533D', className: 'error-bg'}]
+
+	each color in colors
+		+showcase({type: "color", data: color})

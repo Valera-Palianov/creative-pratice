@@ -1,0 +1,13 @@
+mixin button(options = {})
+	-
+		const isDisabled = options.isDisabled ? true : false
+		const baseClass = 'button'
+		const title = options.title ? options.title : 'button'
+
+		let classes = baseClass
+		classes += options.isHover ? ` ${baseClass}_hover` : ''
+		classes += options.theme ? ` ${baseClass}_theme_${options.theme}` : ''
+		classes += options.icon ? ` ${baseClass}_icon ${baseClass}_icon_${options.icon}` : ''
+		classes += options.className ? ' '+options.className : ''
+
+	button(class=classes, disabled=isDisabled)=title

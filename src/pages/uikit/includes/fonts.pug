@@ -1,438 +1,106 @@
 h1 Типография
+	-
+		let fonts = [
+			{
+				title: 'H1',
+				className: 'h1-text-size',
+				lProps: ['Font Family: Graphik RBC LC', 'Font Style: Semibold', 'Font Size: 36px', 'Line Height: 44px', 'Line Height: 102%', 'Letter Spacing: -2%'],
+				mProps: ['Font Family: Graphik RBC LC', 'Font Style: Semibold', 'Font Size: 32px', 'Line Height: 40px', 'Line Height: 104%', 'Letter Spacing: -2%']
+			},
+			{
+				title: 'H2',
+				className: 'h2-text-size',
+				lProps: ['Font Family: Graphik RBC LC', 'Font Style: Medium', 'Font Size: 32px', 'Line Height: 40px', 'Line Height: 104%', 'Letter Spacing: -2%'],
+				mProps: ['Font Family: Graphik RBC LC', 'Font Style: Medium', 'Font Size: 24px', 'Line Height: 32px', 'Line Height: 111%', 'Letter Spacing: -2%']
+			},
+			{
+				title: 'button',
+				className: 'button-text-size',
+				lProps: ['Font Family: Graphik RBC LC', 'Font Style: Regular', 'Font Size: 18px', 'Line Height: 20px', 'Line Height: 93%'],
+				mProps: ['Font Family: Graphik RBC LC', 'Font Style: Regular', 'Font Size: 14px', 'Line Height: 14px', 'Line Height: 83%']
+			},
+			{
+				title: 'caption-L-medium',
+				className: 'caption caption_l caption_medium',
+				lProps: ['Font Family: Graphik RBC LC', 'Font Style: Medium', 'Font Size: 18px', 'Line Height: 24px', 'Line Height: 111%', 'Letter Spacing: -2%'],
+				mProps: ['Font Family: Graphik RBC LC', 'Font Style: Medium', 'Font Size: 16px', 'Line Height: 20px', 'Line Height: 104%', 'Letter Spacing: -2%']
+			},
+			{
+				title: 'caption-L-regular',
+				className: 'caption caption_l',
+				lProps: ['Font Family: Graphik RBC LC', 'Font Style: Regular', 'Font Size: 18px', 'Line Height: 24px', 'Line Height: 111%', 'Letter Spacing: -2%'],
+				mProps: ['Font Family: Graphik RBC LC', 'Font Style: Regular', 'Font Size: 16px', 'Line Height: 20px', 'Line Height: 104%', 'Letter Spacing: -2%']
+			},
+			{
+				title: 'caption-L-light',
+				className: 'caption caption_l caption_light',
+				lProps: ['Font Family: Graphik RBC LC', 'Font Style: Light', 'Font Size: 18px', 'Line Height: 24px', 'Line Height: 111%', 'Letter Spacing: -2%'],
+				mProps: ['Font Family: Graphik RBC LC', 'Font Style: Light', 'Font Size: 16px', 'Line Height: 20px', 'Line Height: 104%', 'Letter Spacing: -2%']
+			},
+			{
+				title: 'caption-M-medium',
+				className: 'caption caption_medium',
+				lProps: ['Font Family: Graphik RBC LC', 'Font Style: Medium', 'Font Size: 16px', 'Line Height: 20px', 'Line Height: 104%', 'Letter Spacing: -2%'],
+				mProps: ['Font Family: Graphik RBC LC', 'Font Style: Medium', 'Font Size: 14px', 'Line Height: 18px', 'Line Height: 107%', 'Letter Spacing: -2%']
+			},
+			{
+				title: 'caption-M-regular',
+				className: 'caption',
+				lProps: ['Font Family: Graphik RBC LC', 'Font Style: Regular', 'Font Size: 16px', 'Line Height: 20px', 'Line Height: 104%' , 'Letter Spacing: -2%'],
+				mProps: ['Font Family: Graphik RBC LC', 'Font Style: Regular', 'Font Size: 14px', 'Line Height: 18px', 'Line Height: 107%', 'Letter Spacing: -2%']
+			},
+			{
+				title: 'caption-M-light',
+				className: 'caption caption_light',
+				lProps: ['Font Family: Graphik RBC LC', 'Font Style: Light', 'Font Size: 16px', 'Line Height: 20px', 'Line Height: 104%' , 'Letter Spacing: -2%'],
+				mProps: ['Font Family: Graphik RBC LC', 'Font Style: Light', 'Font Size: 14px', 'Line Height: 18px', 'Line Height: 107%', 'Letter Spacing: -2%']
+			},
+			{
+				title: 'caption-S-regular',
+				className: 'caption caption_s',
+				lProps: ['Font Family: Graphik RBC LC', 'Font Style: Regular', 'Font Size: 14px', 'Line Height: 16px', 'Line Height: 95%', 'Letter Spacing: -2%'],
+				mProps: ['Font Family: Graphik RBC LC', 'Font Style: Regular', 'Font Size: 12px', 'Line Height: 14px', 'Line Height: 97%', 'Letter Spacing: -2%']
+			},
+			{
+				title: 'body-semibold',
+				className: 'strong-text-size',
+				lProps: ['Font Family: KazimirText RBC', 'Font Style: Semibold', 'Font Size: 18px', 'Line Height: 26px', 'Line Height: 101%', 'Paragraph Spacing: 8px'],
+				mProps: ['Font Family: KazimirText RBC', 'Font Style: Semibold', 'Font Size: 16px', 'Line Height: 24px', 'Line Height: 105%', 'Paragraph Spacing: 8px']
+			},
+			{
+				title: 'body-regular',
+				className: 'default-text-size',
+				lProps: ['Font Family: KazimirText RBC', 'Font Style: Regular', 'Font Size: 18px', 'Line Height: 26px', 'Line Height: 101%', 'Paragraph Spacing: 8px'],
+				mProps: ['Font Family: KazimirText RBC', 'Font Style: Regular', 'Font Size: 16px', 'Line Height: 24px', 'Line Height: 105%', 'Paragraph Spacing: 8px']
+			}
+		]
+
 .flex-grid
 	+showcase({
 		type: 'font',
 		data: {
 			title: 'Page-title',
-			className: 'heading'
-		}})
-		| Font Family: Graphik RBC LC
-		br
-		| Font Style: Semibold
-		br
-		| Font Size: 20px
-		br
-		| Line Height: 20px
-		br
-		| Line Height: 83%
+			className: 'heading',
+			props: ['Font Family: Graphik RBC LC', 'Font Style: Semibold', 'Font Size: 20px', 'Line Height: 20px', 'Line Height: 83%']
+		}
+	})
+
 	+showcase({
 		type: 'font',
 		data: {
 			title: 'Page-subtitle',
-			className: 'heading heading_sub'
-		}})
-		| Font Family: Graphik RBC LC
-		br
-		| Font Style: Regular
-		br
-		| Font Size: 20px
-		br
-		| Line Height: 20px
-		br
-		| Line Height: 83%
+			className: 'heading heading_sub',
+			props: ['Font Family: Graphik RBC LC', 'Font Style: Regular', 'Font Size: 20px', 'Line Height: 20px', 'Line Height: 83%']
+		}
+	})
+
+
 h2.l-dn 1366
 .flex-grid.l-dn
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'H1',
-			tag: 'h1'
-		}})
-		| Font Family: Graphik RBC LC
-		br
-		| Font Style: Semibold
-		br
-		| Font Size: 32px
-		br
-		| Line Height: 40px
-		br
-		| Line Height: 104%
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'H2',
-			tag: 'h2'
-		}})
-		| Font Family: Graphik RBC LC
-		br
-		| Font Style: Medium
-		br
-		| Font Size: 24px
-		br
-		| Line Height: 32px
-		br
-		| Line Height: 111%
-		br
-		| Letter Spacing: -2
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'button',
-			className: 'button-text-size'
-		}})
-		| Font Family: Graphik RBC LC
-		br
-		| Font Style: Regular 
-		br
-		| Font Size: 14px 
-		br
-		| Line Height: 14px 
-		br
-		| Line Height: 83%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-L-medium',
-			className: 'caption caption_l caption_medium'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Medium 
-		br
-		| Font Size: 16px 
-		br
-		| Line Height: 20px 
-		br
-		| Line Height: 104% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-L-regular',
-			className: 'caption caption_l'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Regular 
-		br
-		| Font Size: 16px 
-		br
-		| Line Height: 20px 
-		br
-		| Line Height: 104% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-L-light',
-			className: 'caption caption_l caption_light'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Light 
-		br
-		| Font Size: 16px 
-		br
-		| Line Height: 20px 
-		br
-		| Line Height: 104% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-M-medium',
-			className: 'caption caption_medium'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Medium 
-		br
-		| Font Size: 14px 
-		br
-		| Line Height: 18px 
-		br
-		| Line Height: 107% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-M-regular',
-			className: 'caption'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Regular
-		br
-		| Font Size: 14px 
-		br
-		| Line Height: 18px 
-		br
-		| Line Height: 107% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-M-light',
-			className: 'caption caption_light'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Light
-		br
-		| Font Size: 14px 
-		br
-		| Line Height: 18px 
-		br
-		| Line Height: 107% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-S-regular',
-			className: 'caption caption_s'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Regular
-		br
-		| Font Size: 12px 
-		br
-		| Line Height: 14px 
-		br
-		| Line Height: 97% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'body-semibold',
-			tag: 'strong'
-		}})
-		| Font Family: KazimirText RBC 
-		br
-		| Font Style: Semibold 
-		br
-		| Font Size: 16px 
-		br
-		| Line Height: 24px 
-		br
-		| Line Height: 105% 
-		br
-		| Paragraph Spacing: 8px
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'body-regular',
-		}})
-		| Font Family: KazimirText RBC 
-		br
-		| Font Style: Regular 
-		br
-		| Font Size: 16px 
-		br
-		| Line Height: 24px 
-		br
-		| Line Height: 105% 
-		br
-		| Paragraph Spacing: 8px
+	each font in fonts
+		+showcase({type: 'font', data: {title: font.title, className: font.className, props: font.mProps}})
+
 h2.m-dn 1920
 .flex-grid.m-dn
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'H1',
-			tag: 'h1'
-		}})
-		| Font Family: Graphik RBC LC
-		br
-		| Font Style: Semibold
-		br
-		| Font Size: 36px
-		br
-		| Line Height: 44px
-		br
-		| Line Height: 102%
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'H2',
-			tag: 'h2'
-		}})
-		| Font Family: Graphik RBC LC
-		br
-		| Font Style: Medium
-		br
-		| Font Size: 32px
-		br
-		| Line Height: 40px
-		br
-		| Line Height: 104%
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'button',
-			className: 'button-text-size'
-		}})
-		| Font Family: Graphik RBC LC
-		br
-		| Font Style: Regular 
-		br
-		| Font Size: 18px 
-		br
-		| Line Height: 20px 
-		br
-		| Line Height: 93%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-L-medium',
-			className: 'caption caption_l caption_medium'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Medium 
-		br
-		| Font Size: 18px 
-		br
-		| Line Height: 24px 
-		br
-		| Line Height: 111% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-L-regular',
-			className: 'caption caption_l'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Regular 
-		br
-		| Font Size: 18px 
-		br
-		| Line Height: 24px 
-		br
-		| Line Height: 111% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-L-light',
-			className: 'caption caption_l caption_light'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Light 
-		br
-		| Font Size: 18px 
-		br
-		| Line Height: 24px 
-		br
-		| Line Height: 111% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-M-medium',
-			className: 'caption caption_medium'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Medium 
-		br
-		| Font Size: 16px 
-		br
-		| Line Height: 20px 
-		br
-		| Line Height: 104% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-M-regular',
-			className: 'caption'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Regular
-		br
-		| Font Size: 16px 
-		br
-		| Line Height: 20px 
-		br
-		| Line Height: 104%  
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-M-light',
-			className: 'caption caption_light'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Light
-		br
-		| Font Size: 16px 
-		br
-		| Line Height: 20px 
-		br
-		| Line Height: 104%  
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'caption-S-regular',
-			className: 'caption caption_s'
-		}})
-		| Font Family: Graphik RBC LC 
-		br
-		| Font Style: Regular
-		br
-		| Font Size: 14px 
-		br
-		| Line Height: 16px 
-		br
-		| Line Height: 95% 
-		br
-		| Letter Spacing: -2%
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'body-semibold',
-			tag: 'strong'
-		}})
-		| Font Family: KazimirText RBC 
-		br
-		| Font Style: Semibold 
-		br
-		| Font Size: 18px 
-		br
-		| Line Height: 26px 
-		br
-		| Line Height: 101% 
-		br
-		| Paragraph Spacing: 8px
-	+showcase({
-		type: 'font',
-		data: {
-			title: 'body-regular',
-		}})
-		| Font Family: KazimirText RBC 
-		br
-		| Font Style: Regular 
-		br
-		| Font Size: 18px 
-		br
-		| Line Height: 26px 
-		br
-		| Line Height: 101% 
-		br
-		| Paragraph Spacing: 8px
+	each font in fonts
+		+showcase({type: 'font', data: {title: font.title, className: font.className, props: font.lProps}})

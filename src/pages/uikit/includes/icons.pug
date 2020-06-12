@@ -1,173 +1,39 @@
 h1 Иконки (сервисные)
 .flex-grid
-	+showcase({
-		type: "icon",
-		data: {
-			title: "search"
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "search-small",
-			brake: 2
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "bookmark"
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "notification"
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "hide-notification",
-			brake: 2
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "download"
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "external-link",
-			brake: 2
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "eye-opened",
-			brake: 1
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "eye-closed",
-			brake: 1
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "qa"
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "doc-icon",
-			brake: 2
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "pdf-icon",
-			brake: 2
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "settings",
-			brake: 1
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "more-horizontal"
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "delete",
-			brake: 1
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "history",
-			brake: 2
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "seen",
-			brake: 2
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "arrow-right",
-			brake: 2
-		}
-	})
-	+showcase({
-		type: "icon",
-		data: {
-			title: "arrow-down",
-			brake: 2
-		}
-	})
+	-
+		let icons = [
+			{icon: "search"},
+			{icon: "search-small", count: 1},
+			{icon: "bookmark"},
+			{icon: "notification"},
+			{icon: "hide-notification", count: 1},
+			{icon: "download"},
+			{icon: "external-link", count: 1},
+			{icon: "eye-opened", count: 2},
+			{icon: "eye-closed", count: 2},
+			{icon: "qa"},
+			{icon: "doc-icon", count: 1},
+			{icon: "pdf-icon", count: 1},
+			{icon: "settings", count: 2},
+			{icon: "more-horizontal"},
+			{icon: "delete", count: 2},
+			{icon: "history", count: 1},
+			{icon: "seen", count: 1},
+			{icon: "arrow-right", count: 1},
+			{icon: "arrow-down", count: 1}]
+	each icon in icons
+		+showcase({type: "icon", data: icon})
+
 h1 Иконки (маркетинговые)
 .flex-grid
-	+showcase({
-		type: "icon-adv",
-		data: {
-			title: "Рынок одёжного ритейла",
-			icon: "clothes"
-		}
-	})
-	+showcase({
-		type: "icon-adv",
-		data: {
-			title: "Рынок обувного ритейла",
-			icon: "boots"
-		}
-	})
-	+showcase({
-		type: "icon-adv",
-		data: {
-			title: "Рынок коммерческой недвижимости",
-			icon: "commercial-building"
-		}
-	})
-	+showcase({
-		type: "icon-adv",
-		data: {
-			title: "Рынок товаров класса люкс",
-			icon: "lux"
-		}
-	})
-	+showcase({
-		type: "icon-adv",
-		data: {
-			title: "Мероприятие",
-			icon: "calendar"
-		}
-	})
-	+showcase({
-		type: "icon-adv",
-		data: {
-			title: "Профиль",
-			icon: "profile"
-		}
-	})
+	-
+		let advIcons = [
+			{icon: "clothes", title: "Рынок одёжного ритейла"},
+			{icon: "boots", title: "Рынок обувного ритейла"},
+			{icon: "commercial-building", title: "Рынок коммерческой недвижимости"},
+			{icon: "lux", title: "Рынок товаров класса люкс"},
+			{icon: "calendar", title: "Мероприятие"},
+			{icon: "profile", title: "Профиль"}]
+
+	each icon in advIcons
+		+showcase({type: "icon-adv", data: icon})

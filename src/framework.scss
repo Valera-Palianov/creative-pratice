@@ -20,34 +20,15 @@
 }
 
 @import "variables";
+@import "helpers";
 
 @import "FRAMEWORK/flex-grid/flex-grid";
 @import "FRAMEWORK/heading/heading";
 @import "FRAMEWORK/caption/caption";
 @import "FRAMEWORK/button/button";
 @import "FRAMEWORK/icon/icon";
-@import "FRAMEWORK/icon-adv/icon-adv";
 
-.default-text-color {color: $default-text-color;}
-.error-color {color: $error;}
-.success-color {color: $success;}
-.hover-color {color: $hover;}
-.picked-color {color: $picked;}
-.accent-color {color: $accent;}
-
-.default-text-bg {background: $default-text-color;}
-.grey-darkest-bg {background: $grey-darkest;}
-.grey-darker-bg {background: $grey-darker;}
-.grey-light-bg {background: $grey-light;}
-.success-bg {background: $success;}
-.accent-bg {background: $accent;}
-.picked-bg {background: $picked;}
-.hover-bg {background: $hover;}
-.error-bg {background: $error;}
-.white-bg {background: $white;}
-.grey-bg {background: $grey;}
-
-body {
+body, .default-text-size {
 	margin: 0;
 	padding: 0;
 	color: $default-text-color;
@@ -56,7 +37,7 @@ body {
 	line-height:26px;
 }
 
-b, strong {
+b, strong, .strong-text-size {
 	font-weight: 600;
 }
 
@@ -69,7 +50,7 @@ button, .button-text-size {
 	line-height: 20px;
 }
 
-h1 {
+h1, .h1-text-size {
 	font-size: 36px;
 	line-height: 44px;
 	letter-spacing: -0.02em;
@@ -77,11 +58,7 @@ h1 {
 	margin: 0 0 36px 0;
 }
 
-h1:not(:first-child) {
-	margin-top: 36px;
-}
-
-h2 {
+h2, .h2-text-size {
 	font-size: 32px;
 	line-height: 40px;
 	letter-spacing: -0.02em;
@@ -89,14 +66,18 @@ h2 {
 	margin: 0 0 24px 0;
 }
 
-@media (min-width: 1366px) {
-	.l-dn {
-		display:none;	
-	}
+h1:not(:first-child) {
+	margin-top: 36px;
 }
 
+h2:not(:first-child) {
+	margin-top: 24px;
+}
+
+
+
 @media (max-width: 1366px) {
-	body {
+	body, .default-text-size {
 		font-size: 16px;
 		line-height:24px;
 	}
@@ -106,17 +87,13 @@ h2 {
 		line-height: 14px;
 	}
 
-	h1 {
+	h1, .h1-text-size {
 		font-size: 32px;
 		line-height: 40px;
 	}
 
-	h2 {
+	h2, .h2-text-size {
 		font-size: 24px;
 		line-height: 32px;
-	}
-
-	.m-dn {
-		display:none;	
 	}
 }

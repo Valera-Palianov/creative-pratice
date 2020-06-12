@@ -20,6 +20,34 @@
 		cursor: default;
 	}
 
+	&_icon {
+		&:after {
+			content: '';
+			width: 20px;
+			height:20px;
+			display:inline-block;
+			background-size: contain;
+			margin-left: 9px;
+		}
+
+		&_close {
+			&:after {
+				background-image: url('~ROOT/img/close.svg');
+			}
+		}
+		&_external-link {
+			&:after {
+				background-image: url('~ROOT/img/external-link.svg');
+			}
+		}
+
+		&:disabled {
+			&:after {
+				filter: brightness(300%);
+			}
+		}
+	}
+
 	&_theme_alt {
 		background: none;
 		border: 2px solid $accent;
@@ -52,34 +80,6 @@
 
 		&:hover, &:disabled, &.button_hover {
 			background: none;
-		}
-	}
-
-	&_icon {
-		&:after {
-			content: '';
-			width: 20px;
-			height:20px;
-			display:inline-block;
-			background-size: contain;
-			margin-left: 9px;
-		}
-
-		&_close {
-			&:after {
-				background-image: url('~ROOT/img/close.svg');
-			}
-		}
-		&_external-link {
-			&:after {
-				background-image: url('~ROOT/img/external-link.svg');
-			}
-		}
-
-		&:disabled {
-			&:after {
-				filter: brightness(300%);
-			}
 		}
 	}
 }
