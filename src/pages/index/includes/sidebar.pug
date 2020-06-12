@@ -1,0 +1,11 @@
+.sidebar__logo
+	.logo
+		include ~ROOT/img/logo.svg
+.sidebar__content
+	nav.navigation
+		+icon({icon: 'clothes', className: 'navigation__item', href: '#'})
+		+icon({icon: 'boots', className: 'navigation__item', href: '#', isActive: true, indicator: true})
+		+icon({icon: 'commercial-building', className: 'navigation__item', href: '#'})
+	.user
+		+icon({icon: 'profile', href: '#', className: 'user__icon'})
+		+icon({icon: 'qa', href: '#', className: 'user__help'})

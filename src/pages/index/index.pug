@@ -3,50 +3,21 @@ include ~FRAMEWORK/icon/icon
 include ~FRAMEWORK/button/button
 include ~FRAMEWORK/flex-grid/flex-grid
 
+include ~COMMON/business-block/business-block
+include ~COMMON/link-case/link-case
+
 block title
 	| Index
 
 block page
 	.template
 		aside.template__sidebar.sidebar
-			.sidebar__logo
-				.logo
-					include ~ROOT/img/logo.svg
-			.sidebar__content
-				nav.navigation
-					+icon({icon: 'clothes', className: 'navigation__item', href: '#'})
-					+icon({icon: 'boots', className: 'navigation__item', href: '#', isActive: true, indicator: true})
-					+icon({icon: 'commercial-building', className: 'navigation__item', href: '#'})
-				.user
-					+icon({icon: 'profile', href: '#', className: 'user__icon'})
-					+icon({icon: 'qa', href: '#', className: 'user__help'})
+			include includes/sidebar
 		.template__page
-
 			header.template__header.header
-				h1.header__title.heading
-					a(href='#') Обувной ритейл
-					span  /  
-					a.heading.heading_sub(href='#') Мужская обувь
-				.header__toolbox.toolbox
-					+icon({icon: 'search', href: '#', className: 'toolbox__item'})
-					+icon({icon: 'bookmark', href: '#', className: 'toolbox__item'})
-					+icon({icon: 'notification', href: '#', className: 'toolbox__item', indicator: true})
-
+				include includes/header
 			main.template__main.main
-				nav.secondary-navigation
-					+button({className: 'secondary-navigation__item', title: 'Весь рынок', theme: 'alt'})
-					+button({className: 'secondary-navigation__item', title: 'Мужская обувь'})
-					+button({className: 'secondary-navigation__item', title: 'Женская обувь', theme: 'alt'})
-					+button({className: 'secondary-navigation__item', title: 'Детская обувь', theme: 'alt'})
-				+flex-grid({columns: 2, gap: 24})
-					.flex-grid__item
-						h2.h1-text-size Содержание рынка
-					.flex-grid__item
-						h2.h1-text-size Развитие бизнеса
+				include includes/main
 			footer.template__footer.footer.caption.caption_light
-				span.grey-darkest-color © 1995–2019 Все права защищены. АО «РОСБИЗНЕСКОНСАЛТИНГ»
-				a(href="#") Пользовательское соглашение
-				a(href="#") Политика конфиденциальности
-				span
-					| Есть вопросы? Напишите нам на 
-					strong marketing@rbc.ru
+				include includes/footer
+				

@@ -1,0 +1,13 @@
+.link-case {
+	&__title {
+		margin-bottom: 16px;
+	}
+	
+	&__link {
+		display:block;
+	}
+
+	&__link:not(:last-child) {
+		margin-bottom: 12px;
+	}
+}

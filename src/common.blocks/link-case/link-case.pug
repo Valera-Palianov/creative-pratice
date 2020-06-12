@@ -1,0 +1,10 @@
+mixin link-case(options={})
+	-
+		let title = options.title
+		let links = options.links
+
+	.link-case
+		h2.link-case__title=title
+		.link-case__list
+			each link in links
+				a.caption.caption_light.link-case__link(href="#")=link

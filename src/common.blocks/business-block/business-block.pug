@@ -1,0 +1,23 @@
+include ~FRAMEWORK/icon/icon
+include ~FRAMEWORK/button/button
+
+mixin business-block(options={})
+	-
+		let baseClass = 'business-block'
+		let classes = options.className ? options.className : ''
+
+		let lightTheme = options.lightTheme ? true : false
+		classes += lightTheme ? ` ${baseClass}_light` : ''
+
+		let icon = options.icon
+		let title = options.title
+		let description = options.description
+
+	.business-block(class=classes)
+		.business-block__icon
+			+icon({icon: icon, isActive: true})
+		.business-block__content
+			h2.business-block__title=title
+			.business-block__description=description
+			.business-block__button
+				+button({title: 'Узнать подробнее', theme: (lightTheme ? false : 'secondary'), icon: 'external-link'})
