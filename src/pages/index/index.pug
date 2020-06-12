@@ -1,5 +1,7 @@
 extends ../base/base
 include ~FRAMEWORK/icon/icon
+include ~FRAMEWORK/button/button
+include ~FRAMEWORK/flex-grid/flex-grid
 
 block title
 	| Index
@@ -19,6 +21,7 @@ block page
 					+icon({icon: 'profile', href: '#', className: 'user__icon'})
 					+icon({icon: 'qa', href: '#', className: 'user__help'})
 		.template__page
+
 			header.template__header.header
 				h1.header__title.heading
 					a(href='#') Обувной ритейл
@@ -28,5 +31,22 @@ block page
 					+icon({icon: 'search', href: '#', className: 'toolbox__item'})
 					+icon({icon: 'bookmark', href: '#', className: 'toolbox__item'})
 					+icon({icon: 'notification', href: '#', className: 'toolbox__item', indicator: true})
-			main.template__main.main Main
-			footer.template__footer.footer
+
+			main.template__main.main
+				nav.secondary-navigation
+					+button({className: 'secondary-navigation__item', title: 'Весь рынок', theme: 'alt'})
+					+button({className: 'secondary-navigation__item', title: 'Мужская обувь'})
+					+button({className: 'secondary-navigation__item', title: 'Женская обувь', theme: 'alt'})
+					+button({className: 'secondary-navigation__item', title: 'Детская обувь', theme: 'alt'})
+				+flex-grid({columns: 2, gap: 24})
+					.flex-grid__item
+						h2.h1-text-size Содержание рынка
+					.flex-grid__item
+						h2.h1-text-size Развитие бизнеса
+			footer.template__footer.footer.caption.caption_light
+				span.grey-darkest-color © 1995–2019 Все права защищены. АО «РОСБИЗНЕСКОНСАЛТИНГ»
+				a(href="#") Пользовательское соглашение
+				a(href="#") Политика конфиденциальности
+				span
+					| Есть вопросы? Напишите нам на 
+					strong marketing@rbc.ru

@@ -1,0 +1,6 @@
+.secondary-navigation {
+	margin-bottom: 28px;
+	&__item:not(:last-child) {
+		margin-right: 12px;
+	}
+}
