@@ -35,7 +35,7 @@ mixin showcase(options = {})
 						className: options.data.className
 					}
 
-				+flex-grid({columns: 3, className: 'showcase__container'})
+				+flex-grid({columns: 3, vAlign: 'center', className: 'showcase__container'})
 
 					+__item( {flex: {width: 1} } )
 						.showcase__color(class=color.className)
@@ -55,6 +55,15 @@ mixin showcase(options = {})
 						+button(button.button)
 					+__item({desc: true})=button.title
 
+			when 'icon-heading'
+				-
+					const iconHeading = {
+						headings: options.data.headings,
+					}
+					
+				+flex-grid({columns: 6, className: 'showcase__container'})
+					each heading in iconHeading.headings
+						+__item({sDesc: true})=heading
 			when 'icon'
 
 				-
@@ -80,7 +89,7 @@ mixin showcase(options = {})
 						+__item({desc: true}) нет
 								
 					+__item()
-					+__item({desc: true, flex: {width: 2, hAlignIgnore: true}})=icon.icon
+					+__item({sDesc: true, flex: {width: 2, hAlignIgnore: true}})=icon.icon
 
 			when 'icon-adv'
 				-
@@ -101,7 +110,7 @@ mixin showcase(options = {})
 							+icon({icon: iconAdv.icon})
 
 					+__item()
-					+__item({desc: true, flex: {width: 2, hAlignIgnore: true}})=iconAdv.title
+					+__item({sDesc: true, flex: {width: 2, hAlignIgnore: true}})=iconAdv.title
 
 			when 'link'
 				-
@@ -114,7 +123,7 @@ mixin showcase(options = {})
 						a.h2-text-size(href="#", class=link.className) Ссылка
 					+__item()
 						a(href="#", class=link.className) Ссылка
-					+__item({desc: true})=link.title
+					+__item({sDesc: true})=link.title
 			default
 				+flex-grid()
 					+__item({desc: true}) Incorrect type
@@ -124,7 +133,8 @@ mixin __item(options={})
 	-
 		baseClass = 'showcase__item'
 		let classes = baseClass+(options.className ? ' '+options.className : '')
-		classes += options.desc ? ` ${baseClass}_description` : ''
+		classes += options.desc ? ` caption` : ''
+		classes += options.sDesc ? ` caption caption_s` : ''
 
 		let flex = false
 
