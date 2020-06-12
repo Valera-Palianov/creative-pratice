@@ -5,6 +5,7 @@ mixin flex-grid(options={})
 		classes += options.columns ? ` ${classBase}_columns_${options.columns}` : ''
 		classes += options.vAlign ? ` ${classBase}_v-align_${options.vAlign}` : ''
 		classes += options.hAlign ? ` ${classBase}_h-align_${options.hAlign}` : ''
+		classes += options.gap ? ` ${classBase}_gap_${options.gap}` : ''
 
 	.flex-grid(class=classes)
 		block
